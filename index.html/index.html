@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Pintrost</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container">
+        <div class="brand">Pintrost</div>
+        <div class="search">
+          <input id="search" placeholder="Cari gambar..." aria-label="Cari gambar">
+        </div>
+        <div class="actions">
+          <button id="uploadBtn" class="btn">Unggah</button>
+        </div>
+      </div>
+    </header>
+    <!-- Upload modal -->
+    <div id="uploadModal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button id="uploadClose" class="modal-close" aria-label="Tutup">×</button>
+        <div style="flex:1">
+          <h3 style="margin-top:0;color:#fff">Unggah Foto</h3>
+          <form id="uploadForm">
+            <input id="uploadFileInput" type="file" accept="image/*" required style="display:block;margin-bottom:10px">
+            <input id="uploadTitle" type="text" placeholder="Judul (opsional)" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);margin-bottom:8px">
+            <input id="uploadAuthor" type="text" placeholder="Nama Anda" style="width:100%;padding:8px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);margin-bottom:8px">
+            <div style="display:flex;gap:8px;align-items:center">
+              <button type="submit" class="btn">Unggah</button>
+              <button type="button" id="uploadCancel" class="btn btn--ghost">Batal</button>
+            </div>
+          </form>
+        </div>
+        <div style="width:260px">
+          <div id="uploadPreview" class="map-placeholder">Preview</div>
+        </div>
+      </div>
+    </div>
+
+    <main class="container">
+      <section class="masonry" id="masonry" aria-live="polite"></section>
+    </main>
+
+    <div id="modal" class="modal" aria-hidden="true">
+      <div class="modal-content">
+        <button id="modalClose" class="modal-close" aria-label="Tutup">×</button>
+        <img id="modalImage" src="" alt="Preview image">
+        <div class="modal-meta">
+          <h3 id="modalTitle">Judul Gambar</h3>
+          <p id="modalAuthor">Oleh: Admin pintrost</p>
+          <a id="downloadBtn" class="btn" download>Unduh</a>
+        </div>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div class="container">© 2025 Pintrost</div>
+    </footer>
+
+    <script src="pinterest.js" defer></script>
+  </body>
+</html>
